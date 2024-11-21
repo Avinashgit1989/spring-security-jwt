@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: springboot-ems-with-jwt
+
+  datasource:
+    url: jdbc:mysql://${HOST_NAME:localhost}:${DATABASE_PORT:3306}/${DATABASE_NAME:ems-jwt}
+    username: ${DATABASE_USER_NAME:root}
+    password: ${DATABASE_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+app:
+  jwt-secret: C26513DF0ADAED915483A4E01C5FAF50B5AF1E47AC69698B5397932F84241AF3     #you can generate online from sha 256 online generator site.
+  jwt-expiration-milliseconds: 604800000

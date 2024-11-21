@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: springboot-ems-with-jwt
+
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+  datasource:
+    username: ${DATABASE_USER_NAME:avinash}
+    password: ${DATABASE_PASSWORD:avinash}
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+app:
+  jwt-secret: C26513DF0ADAED915483A4E01C5FAF50B5AF1E47AC69698B5397932F84241AF3     #you can generate online from sha 256 online generator site.
+  jwt-expiration-milliseconds: 604800000
